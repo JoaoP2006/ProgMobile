@@ -2,9 +2,10 @@ package com.ifsc.contaclick;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity{
 
 public class MainActivity extends AppCompatActivity {
     int i=0;
@@ -18,20 +19,12 @@ public class MainActivity extends AppCompatActivity {
 
         Button b=findViewById(R.id.button);
 
-        b.setOnclickListener(v -> {
-
-        })
-        b.setOnclickListener(    {
             @Override
                     public void onClick(View v) {
             tv.setText(Integer.toString(i));
-            i++
+            i++;
                 }
-            )}
-
-
-
-
+            )};
 
     }
     }
