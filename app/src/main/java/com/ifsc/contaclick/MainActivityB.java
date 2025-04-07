@@ -16,7 +16,7 @@ public class MainActivityB extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_b);
         Bundle budle=getIntent().getExtras();
-        String msg=budle.getString("mensagem")
+        String msg=budle.getString("mensagem");
         TextView textView = findViewById(R.id.textView);
         textView.setText(msg);
 

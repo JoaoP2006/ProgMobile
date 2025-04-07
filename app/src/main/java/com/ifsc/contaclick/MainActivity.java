@@ -4,58 +4,50 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
     int i = 0;
-
     EditText edpeso, edaltura;
-    TextView tvresultado;
-    Button button;
+    TextView tvresultadoimc;
+    Button Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.d("ciclo de vida", "metodo onCreate");
         setContentView(R.layout.activity_main);
-        edpeso = findViewById(R.id.edpeso);
-        edaltura = findViewById(R.id.edaltura);
-        tvresultado = findViewById(R.id.tvresultadoimc);
-        button = findViewById(R.id.button);
+        edpeso= findViewById(R.id.edpeso);
+        edaltura= findViewById(R.id.edaltura);
+        tvresultadoimc= findViewById(R.id.tvresultadoimc);
+        Button= findViewById(R.id.button);
 
-<<<<<<< HEAD
-        button.setOnClickListener(v -> {  //calcularIMC
+        Button.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), MainActivityB.class);
-            String msg= edpeso.getText().toString();
-            intent.putExtra("mensagem",msg);
+            Double peso = Double.parseDouble(edpeso.getText().toString());
+            Double altura = Double.parseDouble(edaltura.getText().toString());
+            double resultado = peso * (altura*altura);
+
+            String msg = edpeso.getText().toString();
+            intent.putExtra("mensagem", msg);
             startActivity(intent);
-=======
-          button.setOnClickListener(v -> {  //calcularIMC
-              double peso,altura,imc;
-              peso=Double.parseDouble(edpeso.getText().toString());
-              altura=Double.parseDouble(edaltura.getText().toString());
-              imc=peso/(altura*altura);
-              //formatando numero ##,##
-              DecimalFormat decimalFormat=new DecimalFormat('##.##');
-
->>>>>>> 87fdd6989c9cd97d48730446e51bd6e13a5b39b1
-
-
-
 
         });
-
-
     }
-}
 
+}
 
 
 

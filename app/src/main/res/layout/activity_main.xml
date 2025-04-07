@@ -11,10 +11,11 @@
         android:id="@+id/button"
         android:layout_width="105dp"
         android:layout_height="55dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="540dp"
         android:text="calcular"
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="calcular" />
@@ -70,5 +71,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="332dp"
+        android:layout_height="306dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/perfil"
+        tools:layout_editor_absoluteY="101dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
