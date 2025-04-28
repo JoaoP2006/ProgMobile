@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,18 +21,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView tv=findViewById(R.id.TextView);
-        tv.setText(getString(R.string.app_name));
-        Button b=findViewById(R.id.Button);
+        ImageView imageView = findViewById(R.id.imageView);
 
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tv.setText(Integer.toString(i) );
-                i++;
-
-            }
-        });
 
     }
 }
