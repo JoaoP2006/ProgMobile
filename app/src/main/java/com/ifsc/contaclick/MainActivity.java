@@ -14,43 +14,27 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    int i = 0;
-
-    EditText edpeso, edaltura;
-    TextView tvresultado;
-    Button button;
+    Integer i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-        edpeso = findViewById(R.id.edpeso);
-        edaltura = findViewById(R.id.edaltura);
-        tvresultado = findViewById(R.id.tvresultadoimc);
-        button = findViewById(R.id.button);
+        TextView tv=findViewById(R.id.TextView);
+        tv.setText(getString(R.string.app_name));
+        Button b=findViewById(R.id.Button);
 
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv.setText(Integer.toString(i) );
+                i++;
 
-        button.setOnClickListener(v -> {  //calcularIMC
-            Intent intent = new Intent(getApplicationContext(), MainActivityB.class);
-            String msg = edpeso.getText().toString();
-            intent.putExtra("mensagem", msg);
-            startActivity(intent);
+            }
+        });
 
-            button.setOnClickListener(v -> {  //calcularIMC
-                double peso, altura, imc;
-                peso = Double.parseDouble(edpeso.getText().toString());
-                altura = Double.parseDouble(edaltura.getText().toString());
-                imc = peso / (altura * altura);
-                //formatando numero ##,##
-                DecimalFormat decimalFormat = new DecimalFormat('##.##');
-
-
-            });
-
-
-        }
     }
+}
 
 
 
