@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +20,7 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity {
 
     Integer i = 0;
-    String [] nomes = new String[]{"Anne","Fernanda","joão1", "joão2", "joão3"};
+    String [] nomes = new String[]{"Marte","Venus","Terra", "Saturno", "Netuno", "Jupiter", "Urano"};
     ListView lv;
 
     @Override
@@ -35,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
                 ,nomes);
 
         lv.setAdapter(a);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i= new Intent(getApplicationContext(), PlanetaActivity.class);
+                i.putExtra("nome",nomes[position]);
+                startActivity(i);
+
+            }
+        });
 
 
 
