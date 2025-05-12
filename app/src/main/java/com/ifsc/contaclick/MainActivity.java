@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         lv.setAdapter(a);
 
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
