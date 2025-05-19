@@ -1,13 +1,18 @@
 package com.ifsc.contaclick;
 
-public class Planeta {
+import android.graphics.Bitmap;
 
+import java.io.Serializable;
+
+public class Planeta implements Serializable {
     String nome;
-    Integer imagem;
+    //Bitmap Imagem;
+    Integer imagem; //São recursos da pasta drawable R.drawable.nome
 
-    public Planeta(String nome, Integer imagen) {
+    public Planeta(String nome, Integer imagem) {
         this.nome = nome;
         this.imagem = imagem;
+
     }
 }
 
